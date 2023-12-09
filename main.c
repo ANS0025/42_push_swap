@@ -19,14 +19,16 @@ int	main(int argc, char **argv)
 
 	if (argc == 1)
 		return (0);
-	// validate_args(argc, argv);
+	validate_args(argc, argv);
 	stack_a = (t_list *)malloc(sizeof(t_list));
 	stack_b = (t_list *)malloc(sizeof(t_list));
 	if (stack_a == NULL || stack_b == NULL)
-		return 1;
+		print_error();
 	initialize_stack(stack_a);
 	initialize_stack(stack_b);
 	set_stack(stack_a, argc, argv);
+
+	//checker
 	print_stack(stack_a);
 	print_stack(stack_b);
 
@@ -36,7 +38,13 @@ int	main(int argc, char **argv)
 	free_stack(stack_b);
 	ft_printf("stack b freed\n");
 
+	stack_a = NULL;
+	ft_printf("stack a: %p\n", stack_a);
+	stack_b = NULL;
+	ft_printf("stack b: %p\n", stack_b);
+
 	print_stack(stack_a);
 	print_stack(stack_b);
 	return (0);
 }
+

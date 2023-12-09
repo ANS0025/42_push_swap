@@ -36,7 +36,9 @@ void initialize_stack(t_list *list);
 void set_stack(t_list *stack, int argc, char **argv);
 void print_stack(t_list *stack);
 void insert_tail(t_list *list, t_node *node);
-void free_two_dimensional_array(char **array);
+void ft_free(char **array);
 void free_stack(t_list *stack);
+void validate_args(int argc, char **argv);
+void print_error(void);
 
 #endif
