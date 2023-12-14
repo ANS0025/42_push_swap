@@ -2,7 +2,7 @@ NAME = push_swap
 SRCS =  $(wildcard *.c utils/*.c)
 OBJS = ${SRCS:.c=.o}
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 all: ${NAME} ${CHECK}

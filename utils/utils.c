@@ -68,7 +68,8 @@ void print_stack(t_list *stack)
 		ft_printf("stack is empty\n");
 	while (node != NULL)
 	{
-		ft_printf("(%d) data:%d, index:%d, next: %p\n", i, node->data, node->index, node->next);
+		ft_printf("(%d) data:%d, index:%d, memory: %p, next: %p\n", 
+			i, node->data, node->index, node, node->next);
 		node = node->next;
 		i++;
 	}
@@ -96,6 +97,7 @@ void insert_tail(t_list *list, t_node *node)
 }
 
 /*-----	CLEAN UP FUNCTIONS -----*/
+// 二重配列のメモリ解放
 void ft_free(char **array)
 {
 	int i;
@@ -108,10 +110,11 @@ void ft_free(char **array)
 	}
 }
 
+// stackの全てのノードを解放
 void free_stack(t_list *stack)
 {
-	t_node *node;
-	t_node *tmp;
+	t_node	*node;
+	t_node	*tmp;
 
 	node = stack->head;
 	while (node != NULL)
@@ -189,6 +192,17 @@ void	validate_args(int argc, char **argv)
 	if (argc == 2)
 		ft_free(args);
 }
+/*-----	SORT CHECK -----*/
+int is_sorted(t_list *stack)
+{
+	t_node *node;
 
-
-
+	node = stack->head;
+	while (node->next != NULL)
+	{
+		if (node->data > node->next->data)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
