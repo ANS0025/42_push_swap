@@ -31,7 +31,7 @@ void	simple_sort(t_list *stack_a, t_list *stack_b)
 	if (is_sorted(stack_a) || stack_a->size <= 1)
 		return ;
 	if (stack_a->size == 2)
-		//sa(stack_a);
+		sa(stack_a);
 	else if (stack_a->size == 3)
 		//sort_three(stack_a);
 	else if (stack_a->size == 4)

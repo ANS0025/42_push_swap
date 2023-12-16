@@ -43,3 +43,9 @@ void	rrb(t_list *stack)
 	if (reverse_rotate(stack))
 		ft_printf("rrb\n");
 }
+
+void	rrr(t_list *stack_a, t_list *stack_b)
+{
+	if (reverse_rotate(stack_a) && reverse_rotate(stack_b))
+		ft_printf("rrr\n");
+}
