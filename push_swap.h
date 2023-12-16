@@ -26,16 +26,17 @@ typedef struct __node
 //stack
 typedef struct __list
 {
+	int 	size;
 	t_node	*head;
 	t_node	*tail;
 }	t_list;
 
 //util functions
 t_node *initialize_node(int data);
-void initialize_stack(t_list *list);
+void initialize_stack(t_list *stack);
 void set_stack(t_list *stack, int argc, char **argv);
 void print_stack(t_list *stack);
-void insert_tail(t_list *list, t_node *node);
+void insert_tail(t_list *stack, t_node *node);
 void ft_free(char **array);
 void free_stack(t_list *stack);
 void validate_args(int argc, char **argv);

@@ -26,10 +26,11 @@ t_node *initialize_node(int data)
 	return (node);
 }
 
-void initialize_stack(t_list *list)
+void initialize_stack(t_list *stack)
 {
-	list->head = NULL;
-	list->tail = NULL;
+	stack->size = 0;
+	stack->head = NULL;
+	stack->tail = NULL;
 }
 
 void set_stack(t_list *stack, int argc, char **argv)
@@ -82,17 +83,18 @@ void print_error()
 }
 
 /*-----	INSERT FUNCTIONS -----*/
-void insert_tail(t_list *list, t_node *node)
+void insert_tail(t_list *stack, t_node *node)
 {
-	if (list->head == NULL)
+	if (stack->head == NULL)
 	{
-		list->head = node;
-		list->tail = node;
+		stack->head = node;
+		stack->tail = node;
 	}
 	else
 	{
-		list->tail->next = node;
-		list->tail = node;
+		stack->tail->next = node;
+		stack->tail = node;
+		stack->size++;
 	}
 }
 
@@ -191,18 +193,4 @@ void	validate_args(int argc, char **argv)
 	}
 	if (argc == 2)
 		ft_free(args);
-}
-/*-----	SORT CHECK -----*/
-int is_sorted(t_list *stack)
-{
-	t_node *node;
-
-	node = stack->head;
-	while (node->next != NULL)
-	{
-		if (node->data > node->next->data)
-			return (0);
-		node = node->next;
-	}
-	return (1);
 }
