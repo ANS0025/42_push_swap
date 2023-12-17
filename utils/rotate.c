@@ -23,10 +23,15 @@ int	rotate(t_list *stack)
 	first = stack->head;
 	second = stack->head->next;
 	last = stack->tail;
+
 	stack->head = second;
 	stack->tail = first;
+
 	last->next = first;
+	first->prev = last;
+
 	first->next = NULL;
+	second->prev = NULL;
 	return (1);
 }
 

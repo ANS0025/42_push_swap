@@ -12,7 +12,6 @@
 
 #include "../push_swap.h"
 
-//TODO: Implement push operations
 int	push(t_list *stack_from, t_list *stack_to)
 {
 	t_node	*first;
@@ -24,11 +23,13 @@ int	push(t_list *stack_from, t_list *stack_to)
 	second = stack_from->head->next;
 
 	stack_from->head = second;
+	stack_from->head->prev = NULL;
 	stack_from->size--;
 	if (stack_from->size == 0)
 		stack_from->tail = NULL;
 
 	first->next = stack_to->head;
+	stack_to->head->prev = first;
 	stack_to->head = first;
 	stack_to->size++;
 	if (stack_to->size == 0)
