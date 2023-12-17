@@ -22,6 +22,7 @@ t_node *initialize_node(int data)
 		return (NULL);
 	node->data = data;
 	node->index = 0;
+	node->prev = NULL;
 	node->next = NULL;
 	return (node);
 }
@@ -69,8 +70,8 @@ void print_stack(t_list *stack)
 		ft_printf("stack is empty\n");
 	while (node != NULL)
 	{
-		ft_printf("(%d) data:%d, index:%d, memory: %p, next: %p\n", 
-			i, node->data, node->index, node, node->next);
+		ft_printf("(%d) data:%d, index:%d, memory: %p, prev: %p, next: %p\n", 
+			i, node->data, node->index, node, node->prev, node->next);
 		node = node->next;
 		i++;
 	}
@@ -93,6 +94,7 @@ void insert_tail(t_list *stack, t_node *node)
 	else
 	{
 		stack->tail->next = node;
+		node->prev = stack->tail;
 		stack->tail = node;
 		stack->size++;
 	}

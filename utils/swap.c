@@ -16,19 +16,22 @@ int	swap(t_list *stack)
 {
 	t_node	*first;
 	t_node	*second;
-	t_node	*third;
 
 	if (stack->size <= 1)
 		return (0);
-
 	first = stack->head;
 	second = stack->head->next;
-	third = second->next;
 
-	stack->head = second;
+	first->next = second->next;
+	first->prev = second;
+
 	second->next = first;
-	first->next = third;
-	if (stack->size == 2)
+	second->prev = NULL;
+	stack->head = second;
+
+	if (first->next)
+		first->next->prev = first;
+	else
 		stack->tail = first;
 
 	return (1);

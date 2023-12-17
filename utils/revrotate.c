@@ -22,13 +22,16 @@ int reverse_rotate(t_list *stack)
 		return (0);
 	first = stack->head;
 	last = stack->tail;
-	second_last = stack->head;
-	while (second_last->next->next != NULL)
-		second_last = second_last->next;
+	second_last = stack->tail->prev;
+
 	stack->head = last;
 	stack->tail = second_last;
-	second_last->next = NULL;
+
 	last->next = first;
+	first->prev = last;
+
+	last->prev = NULL;
+	second_last->next = NULL;
 	return (1);
 }
 
