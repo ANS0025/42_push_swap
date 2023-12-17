@@ -51,6 +51,6 @@ void	sb(t_list *stack)
 
 void	ss(t_list *stack_a, t_list *stack_b)
 {
-	if (swap(stack_a) && swap(stack_a))
+	if (swap(stack_a) && swap(stack_b))
 		ft_printf("ss\n");
 }

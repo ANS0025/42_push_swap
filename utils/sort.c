@@ -26,18 +26,18 @@ int	is_sorted(t_list *stack)
 	}
 	return (1);
 }
-void	simple_sort(t_list *stack_a, t_list *stack_b)
-{
-	if (is_sorted(stack_a) || stack_a->size <= 1)
-		return ;
-	if (stack_a->size == 2)
-		sa(stack_a);
-	else if (stack_a->size == 3)
-		//sort_three(stack_a);
-	else if (stack_a->size == 4)
-		//sort_four(stack_a, stack_b);
-	else if (stack_a->size == 5)
-		//sort_five(stack_a, stack_b);
-	else
-		//sort_hundred(stack_a, stack_b);
-}
+// void	simple_sort(t_list *stack_a, t_list *stack_b)
+// {
+// 	if (is_sorted(stack_a) || stack_a->size <= 1)
+// 		return ;
+// 	if (stack_a->size == 2)
+// 		// sa(stack_a);
+// 	else if (stack_a->size == 3)
+// 		//sort_three(stack_a);
+// 	else if (stack_a->size == 4)
+// 		//sort_four(stack_a, stack_b);
+// 	else if (stack_a->size == 5)
+// 		//sort_five(stack_a, stack_b);
+// 	else
+// 		//sort_hundred(stack_a, stack_b);
+// }
