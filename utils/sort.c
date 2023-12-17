@@ -31,7 +31,7 @@ int	is_sorted(t_list *stack)
 // 	if (is_sorted(stack_a) || stack_a->size <= 1)
 // 		return ;
 // 	if (stack_a->size == 2)
-// 		// sa(stack_a);
+// 		sa(stack_a);
 // 	else if (stack_a->size == 3)
 // 		//sort_three(stack_a);
 // 	else if (stack_a->size == 4)

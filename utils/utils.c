@@ -54,9 +54,48 @@ void set_stack(t_list *stack, int argc, char **argv)
 		insert_tail(stack, node);
 		i++;
 	}
+	set_index(stack);
 	if (argc == 2)
 		ft_free(args);
 }
+
+static void	set_index(t_list *stack)
+{
+	t_node	*current_node;
+	t_node	*min_node;
+	int		index;
+
+	current_node = stack->head;
+	index = 0;
+	while(current_node != NULL)
+	{
+		min_node = find_unindexed_min_node(stack);
+		if (min_node == NULL)
+			break;
+		min_node->index = index++;
+		current_node = current_node->next;
+	}
+}
+
+static t_node	*find_unindexed_min_node(t_list *stack)
+{
+	t_node	*current_node;
+	t_node	*min_node;
+
+	if (stack->head == NULL)
+		return (NULL);
+	current_node = stack->head;
+	min_node = current_node;
+	while (current_node != NULL)
+	{
+		if (current_node->index == 0 && current_node->data <= min_node->data)
+			min_node = current_node;
+		current_node = current_node->next;
+	}
+
+	return (min_node);
+}
+
 
 /*-----	PRINT FUNCTIONS -----*/
 void print_stack(t_list *stack)
