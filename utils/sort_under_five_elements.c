@@ -41,9 +41,11 @@ static void	rotate_min_to_top(t_list *stack)
 	t_node	*min_node;
 
 	min_node = find_min_node(stack);
+	if (min_node == NULL)
+		return ;
 	min_pos = get_node_position(stack, min_node);
 	if (min_pos == -1)
-		print_error();
+		return ;
 	while (stack->head->data != min_node->data)
 	{
 		if (min_pos <= stack->size / 2)

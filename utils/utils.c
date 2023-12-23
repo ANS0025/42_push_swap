@@ -34,23 +34,34 @@ void initialize_stack(t_list *stack)
 	stack->tail = NULL;
 }
 
-static t_node	*find_unindexed_min_node(t_list *stack)
+static t_node *find_unindexed_min_node(t_list *stack)
 {
-	t_node	*current_node;
-	t_node	*min_node;
+    t_node *current_node;
+    t_node *min_node = NULL;
 
-	if (stack->head == NULL)
-		return (NULL);
+    if (stack->head == NULL)
+        return NULL;
+
+    // Find the first unindexed node to initialize min_node
 	current_node = stack->head;
-	min_node = current_node;
-	while (current_node != NULL)
-	{
-		if (current_node->index == 0 && current_node->data < min_node->data)
-			min_node = current_node;
-		current_node = current_node->next;
-	}
+    while (current_node != NULL && current_node->index != 0)
+        current_node = current_node->next;
 
-	return (min_node);
+    // If there are no unindexed nodes, return NULL
+    if (current_node == NULL)
+        return NULL;
+
+    min_node = current_node;
+
+    // Continue searching for the smallest unindexed node
+    while (current_node != NULL)
+    {
+        if (current_node->index == 0 && current_node->data < min_node->data)
+            min_node = current_node;
+        current_node = current_node->next;
+    }
+
+    return min_node;
 }
 
 static void	set_index(t_list *stack)
@@ -258,7 +269,7 @@ void	sort_stack(t_list *stack_a, t_list *stack_b)
 		return ;
 	else if (stack_a->size == 2)
 		sa(stack_a);
-	else if (stack_a->size <= 3)
+	else if (stack_a->size == 3)
 		sort_three_elements(stack_a);
 	else if (stack_a->size <= 5)
 		sort_under_five_elements(stack_a, stack_b);

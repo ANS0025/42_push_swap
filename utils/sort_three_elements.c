@@ -18,22 +18,18 @@ static t_node	*find_max_node(t_list *stack)
 	return (max_node);
 }
 
-void	sort_three_elements(t_list *stack_a)
+void	sort_three_elements(t_list *stack)
 {
-	t_node	*head;
-	t_node	*tail;
 	t_node	*highest;
 
-	head = stack_a->head;
-	tail = stack_a->tail;
-	highest = find_max_node(stack_a);
-	while (!is_sorted(stack_a))
+	highest = find_max_node(stack);
+	while (!is_sorted(stack))
 	{
-		if (head->index == highest->index)
-			ra(stack_a);
-		else if (head->next->index == highest->index)
-			rra(stack_a);
-		else if (tail->index == highest->index)
-			sa(stack_a);
+		if (stack->head->index == highest->index)
+			ra(stack);
+		else if(stack->head->next->index == highest->index)
+			rra(stack);
+		else if(stack->tail->index == highest->index)
+			sa(stack);
 	}
 }
