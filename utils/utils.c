@@ -53,6 +53,24 @@ static t_node	*find_unindexed_min_node(t_list *stack)
 	return (min_node);
 }
 
+t_node	*find_max_node(t_list *stack)
+{
+	t_node	*current_node;
+	t_node	*max_node;
+
+	if (stack->head == NULL)
+		return (NULL);
+	current_node = stack->head;
+	max_node = current_node;
+	while (current_node != NULL)
+	{
+		if (current_node->data > max_node->data)
+			max_node = current_node;
+		current_node = current_node->next;
+	}
+	return (max_node);
+}
+
 static void	set_index(t_list *stack)
 {
 	t_node	*current_node;

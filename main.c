@@ -27,15 +27,20 @@ int	main(int argc, char **argv)
 	initialize_stack(stack_a);
 	initialize_stack(stack_b);
 	set_stack(stack_a, argc, argv);
-	// if (is_sorted(stack_a))
-	// {
-	// 	free_stack(stack_a);
-	// 	free_stack(stack_b);
-	// 	return (0);
-	// }
-	// simple_sort(stack_a, stack_b);
+	if (is_sorted(stack_a))
+	{
+		free_stack(stack_a);
+		free_stack(stack_b);
+		return (0);
+	}
+	sort_stack(stack_a, stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
+	return (0);
+}
 
-	//checker
+void	checker()
+{
 	print_stack(stack_a);
 	print_stack(stack_b);
 
