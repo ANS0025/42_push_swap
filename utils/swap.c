@@ -12,7 +12,7 @@
 
 #include "../push_swap.h"
 
-int	swap(t_list *stack)
+static int	swap(t_list *stack)
 {
 	t_node	*first;
 	t_node	*second;

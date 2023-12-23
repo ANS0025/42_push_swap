@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static t_node	*find_min_node(t_list *stack)
 {
@@ -60,7 +60,7 @@ void	sort_under_five_elements(t_list *stack_a, t_list *stack_b)
 		rotate_min_to_top(stack_a);
 		pb(stack_a, stack_b);
 	}
-	three_element_sort(stack_a);
+	sort_three_elements(stack_a);
 	while (stack_b->size > 0)
 		pa(stack_a, stack_b);
 }

@@ -27,6 +27,8 @@ int	main(int argc, char **argv)
 	initialize_stack(stack_a);
 	initialize_stack(stack_b);
 	set_stack(stack_a, argc, argv);
+	print_stack(stack_a);
+	ft_printf("%d\n", stack_a->size);
 	if (is_sorted(stack_a))
 	{
 		free_stack(stack_a);

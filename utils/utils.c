@@ -83,8 +83,8 @@ static void insert_tail(t_list *stack, t_node *node)
 		stack->tail->next = node;
 		node->prev = stack->tail;
 		stack->tail = node;
-		stack->size++;
 	}
+	stack->size++;
 }
 
 void set_stack(t_list *stack, int argc, char **argv)

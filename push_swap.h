@@ -54,7 +54,9 @@ void	rrr(t_list *stack_a, t_list *stack_b);
 void	ra(t_list *stack);
 void	rb(t_list *stack);
 void	rr(t_list *stack_a, t_list *stack_b);
-
+void	sa(t_list *stack);
+void	sb(t_list *stack);
+void	ss(t_list *stack_a, t_list *stack_b);
 //sorting algorithms
 void	sort_three_elements(t_list *stack_a);
 void	sort_under_five_elements(t_list *stack_a, t_list *stack_b);

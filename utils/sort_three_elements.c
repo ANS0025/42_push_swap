@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static t_node	*find_max_node(t_list *stack)
 {
