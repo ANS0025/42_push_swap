@@ -53,24 +53,6 @@ static t_node	*find_unindexed_min_node(t_list *stack)
 	return (min_node);
 }
 
-t_node	*find_max_node(t_list *stack)
-{
-	t_node	*current_node;
-	t_node	*max_node;
-
-	if (stack->head == NULL)
-		return (NULL);
-	current_node = stack->head;
-	max_node = current_node;
-	while (current_node != NULL)
-	{
-		if (current_node->data > max_node->data)
-			max_node = current_node;
-		current_node = current_node->next;
-	}
-	return (max_node);
-}
-
 static void	set_index(t_list *stack)
 {
 	t_node	*current_node;
@@ -86,6 +68,22 @@ static void	set_index(t_list *stack)
 			break;
 		min_node->index = index++;
 		current_node = current_node->next;
+	}
+}
+
+static void insert_tail(t_list *stack, t_node *node)
+{
+	if (stack->head == NULL)
+	{
+		stack->head = node;
+		stack->tail = node;
+	}
+	else
+	{
+		stack->tail->next = node;
+		node->prev = stack->tail;
+		stack->tail = node;
+		stack->size++;
 	}
 }
 
@@ -140,23 +138,6 @@ void print_error()
 	exit(1);
 }
 
-/*-----	INSERT FUNCTIONS -----*/
-void insert_tail(t_list *stack, t_node *node)
-{
-	if (stack->head == NULL)
-	{
-		stack->head = node;
-		stack->tail = node;
-	}
-	else
-	{
-		stack->tail->next = node;
-		node->prev = stack->tail;
-		stack->tail = node;
-		stack->size++;
-	}
-}
-
 /*-----	CLEAN UP FUNCTIONS -----*/
 // 二重配列のメモリ解放
 void ft_free(char **array)
@@ -188,6 +169,20 @@ void free_stack(t_list *stack)
 }
 
 /*-----	VALIDATOR FUNCTIONS -----*/
+int	is_sorted(t_list *stack)
+{
+	t_node	*node;
+
+	node = stack->head;
+	while (node->next != NULL)
+	{
+		if (node->data > node->next->data)
+			return (0);
+		node = node->next;
+	}
+	return (1);
+}
+
 static int	isnum(char *num)
 {
 	int	i;
@@ -204,7 +199,8 @@ static int	isnum(char *num)
 	return (1);
 }
 
-static int ft_strcmp(const char *s1, const char *s2) {
+static int ft_strcmp(const char *s1, const char *s2)
+{
 	while (*s1 && (*s1 == *s2)) {
 		s1++;
 		s2++;
@@ -212,7 +208,8 @@ static int ft_strcmp(const char *s1, const char *s2) {
 	return *(unsigned char*)s1 - *(unsigned char*)s2;
 }
 
-int has_duplicate(int argc, char **argv) {
+int has_duplicate(int argc, char **argv)
+{
 	int i = 1;
 	while (i < argc) {
 		int j = i + 1;
@@ -252,4 +249,19 @@ void	validate_args(int argc, char **argv)
 	}
 	if (argc == 2)
 		ft_free(args);
+}
+
+/*-----	SORT CASES -----*/
+void	sort_stack(t_list *stack_a, t_list *stack_b)
+{
+	if (is_sorted(stack_a) || stack_a->size <= 1)
+		return ;
+	else if (stack_a->size == 2)
+		sa(stack_a);
+	else if (stack_a->size <= 3)
+		sort_three_elements(stack_a);
+	else if (stack_a->size <= 5)
+		sort_under_five_elements(stack_a, stack_b);
+	else
+		radix_sort(stack_a, stack_b);
 }

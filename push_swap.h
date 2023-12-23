@@ -37,10 +37,28 @@ t_node *initialize_node(int data);
 void initialize_stack(t_list *stack);
 void set_stack(t_list *stack, int argc, char **argv);
 void print_stack(t_list *stack);
-void insert_tail(t_list *stack, t_node *node);
+void print_error(void);
 void ft_free(char **array);
 void free_stack(t_list *stack);
+int	is_sorted(t_list *stack);
+int has_duplicate(int argc, char **argv);
 void validate_args(int argc, char **argv);
-void print_error(void);
+void sort_stack(t_list *stack_a, t_list *stack_b);
+
+//operations
+void	pa(t_list *stack_a, t_list *stack_b);
+void	pb(t_list *stack_a, t_list *stack_b);
+void	rra(t_list *stack);
+void	rrb(t_list *stack);
+void	rrr(t_list *stack_a, t_list *stack_b);
+void	ra(t_list *stack);
+void	rb(t_list *stack);
+void	rr(t_list *stack_a, t_list *stack_b);
+
+//sorting algorithms
+void	sort_three_elements(t_list *stack_a);
+void	sort_under_five_elements(t_list *stack_a, t_list *stack_b);
+void	radix_sort(t_list *stack_a, t_list *stack_b);
+
 
 #endif

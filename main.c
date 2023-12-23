@@ -36,27 +36,9 @@ int	main(int argc, char **argv)
 	sort_stack(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
-	return (0);
-}
 
-void	checker()
-{
-	print_stack(stack_a);
-	print_stack(stack_b);
-
-	free_stack(stack_a);
-	ft_printf("stack a freed\n");
-
-	free_stack(stack_b);
-	ft_printf("stack b freed\n");
-
-	stack_a = NULL;
-	ft_printf("stack a: %p\n", stack_a);
-	stack_b = NULL;
-	ft_printf("stack b: %p\n", stack_b);
-
+	//check if freed.
 	print_stack(stack_a);
 	print_stack(stack_b);
 	return (0);
 }
-
