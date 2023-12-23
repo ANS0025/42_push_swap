@@ -12,29 +12,38 @@
 
 #include "../push_swap.h"
 
+//TODO: check this function again
 static int	push(t_list *stack_from, t_list *stack_to)
 {
-	t_node	*first;
-	t_node	*second;
+    t_node *first;
+    t_node *second;
 
-	if (stack_from->size == 0)
-		return (0);
-	first = stack_from->head;
-	second = stack_from->head->next;
+    if (stack_from->size == 0)
+        return (0);
 
-	stack_from->head = second;
-	stack_from->head->prev = NULL;
-	stack_from->size--;
-	if (stack_from->size == 0)
-		stack_from->tail = NULL;
+    first = stack_from->head;
+    second = stack_from->head->next;
 
-	first->next = stack_to->head;
-	stack_to->head->prev = first;
-	stack_to->head = first;
-	stack_to->size++;
-	if (stack_to->size == 0)
-		stack_to->tail = first;
-	return (1);
+    stack_from->head = second;
+    if (stack_from->head)  // Check if the new head is not NULL
+        stack_from->head->prev = NULL;
+    stack_from->size--;
+
+    if (stack_from->size == 0)
+        stack_from->tail = NULL;
+
+    if (stack_to->head)  // Check if stack_to is not empty
+        stack_to->head->prev = first;
+
+    first->next = stack_to->head;
+    first->prev = NULL;  // Set prev of first to NULL as it becomes new head
+    stack_to->head = first;
+
+    if (stack_to->size == 0)
+        stack_to->tail = first;  // Set tail to first only if stack_to was empty
+
+    stack_to->size++;
+    return (1);
 }
 
 void	pa(t_list *stack_a, t_list *stack_b)
