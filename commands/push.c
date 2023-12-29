@@ -6,7 +6,7 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 22:52:16 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/29 23:45:22 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2023/12/30 00:30:28 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,21 @@ static int	push(t_list *stack_from, t_list *stack_to)
 
 	if (stack_from->size == 0)
 		return (0);
-
 	first = stack_from->head;
 	second = stack_from->head->next;
-
 	stack_from->head = second;
 	if (stack_from->head)
 		stack_from->head->prev = NULL;
 	stack_from->size--;
-
 	if (stack_from->size == 0)
 		stack_from->tail = NULL;
-
 	if (stack_to->head)
 		stack_to->head->prev = first;
-
 	first->next = stack_to->head;
 	first->prev = NULL;
 	stack_to->head = first;
-
 	if (stack_to->size == 0)
 		stack_to->tail = first;
-
 	stack_to->size++;
 	return (1);
 }

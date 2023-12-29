@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three_elements.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 23:44:35 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/29 23:44:37 by akiseki          ###   ########.fr       */
+/*   Updated: 2023/12/30 00:25:31 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	sort_three_elements(t_list *stack)
 	{
 		if (stack->head->index == highest->index)
 			ra(stack);
-		else if(stack->head->next->index == highest->index)
+		else if (stack->head->next->index == highest->index)
 			rra(stack);
-		else if(stack->tail->index == highest->index)
+		else if (stack->tail->index == highest->index)
 			sa(stack);
 	}
 }

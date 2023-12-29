@@ -1,54 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/15 22:52:32 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/29 23:45:09 by akihitoniko      ###   ########.fr       */
+/*   Created: 2023/12/15 22:52:38 by akiseki           #+#    #+#             */
+/*   Updated: 2023/12/30 00:30:44 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	rotate(t_list *stack)
+static int	swap(t_list *stack)
 {
 	t_node	*first;
 	t_node	*second;
-	t_node	*last;
 
 	if (stack->size <= 1)
 		return (0);
 	first = stack->head;
 	second = stack->head->next;
-	last = stack->tail;
-
-	stack->head = second;
-	stack->tail = first;
-
-	last->next = first;
-	first->prev = last;
-
-	first->next = NULL;
+	first->next = second->next;
+	first->prev = second;
+	second->next = first;
 	second->prev = NULL;
+	stack->head = second;
+	if (first->next)
+		first->next->prev = first;
+	else
+		stack->tail = first;
 	return (1);
 }
 
-void	ra(t_list *stack)
+void	sa(t_list *stack)
 {
-	if (rotate(stack))
-		ft_printf("ra\n");
+	if (swap(stack))
+		ft_printf("sa\n");
 }
 
-void	rb(t_list *stack)
+void	sb(t_list *stack)
 {
-	if (rotate(stack))
-		ft_printf("rb\n");
+	if (swap(stack))
+		ft_printf("sb\n");
 }
 
-void	rr(t_list *stack_a, t_list *stack_b)
+void	ss(t_list *stack_a, t_list *stack_b)
 {
-	if (rotate(stack_a) && rotate(stack_b))
-		ft_printf("rr\n");
+	if (swap(stack_a) && swap(stack_b))
+		ft_printf("ss\n");
 }

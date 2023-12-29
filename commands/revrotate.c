@@ -6,7 +6,7 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 22:52:23 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/29 23:45:06 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2023/12/30 00:29:40 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,10 @@ static int	reverse_rotate(t_list *stack)
 	first = stack->head;
 	last = stack->tail;
 	second_last = stack->tail->prev;
-
 	stack->head = last;
 	stack->tail = second_last;
-
 	last->next = first;
 	first->prev = last;
-
 	last->prev = NULL;
 	second_last->next = NULL;
 	return (1);

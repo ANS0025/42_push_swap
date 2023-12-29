@@ -1,5 +1,5 @@
 NAME = push_swap
-SRCS =  $(wildcard *.c utils/*.c algorithms/*.c)
+SRCS =  $(wildcard *.c utils/*.c algorithms/*.c commands/*.c)
 OBJS = ${SRCS:.c=.o}
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
