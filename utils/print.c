@@ -6,7 +6,7 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 00:09:27 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 00:28:10 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2023/12/30 01:34:37 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ void	print_stack(t_list *stack)
 // エラーを表示して終了
 void	print_error(void)
 {
-	ft_printf("Error\n");
+	ft_putendl_fd("Error", 2);
 	exit(1);
 }
