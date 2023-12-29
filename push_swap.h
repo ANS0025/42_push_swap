@@ -6,7 +6,7 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:54:35 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/29 23:43:48 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2023/12/30 03:15:25 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ void	print_error(void);
 void	ft_free(char **array);
 void	free_stack(t_list *stack);
 int		is_sorted(t_list *stack);
-int		has_duplicate(int argc, char **argv);
 void	validate_args(int argc, char **argv);
 void	sort_stack(t_list *stack_a, t_list *stack_b);
 

@@ -6,26 +6,11 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 00:09:50 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 01:49:06 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2023/12/30 03:15:43 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// スタックがソート済みかどうかを判定
-int	is_sorted(t_list *stack)
-{
-	t_node	*node;
-
-	node = stack->head;
-	while (node->next != NULL)
-	{
-		if (node->data > node->next->data)
-			return (0);
-		node = node->next;
-	}
-	return (1);
-}
 
 static int	isnum(char *num)
 {
@@ -33,7 +18,11 @@ static int	isnum(char *num)
 
 	i = 0;
 	if (num[0] == '-')
+	{
 		i++;
+		if (num[1] == '\0')
+			return (0);
+	}
 	while (num[i])
 	{
 		if (!ft_isdigit(num[i]))
@@ -53,13 +42,23 @@ static int	ft_strcmp(const char *s1, const char *s2)
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
+static int	ft_arrlen(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+		i++;
+	return (i);
+}
+
 // 引数が重複していないかどうかを判定
-int	has_duplicate(int argc, char **argv)
+static int	has_duplicate(int argc, char **argv)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		j = i + 1;
@@ -78,17 +77,19 @@ int	has_duplicate(int argc, char **argv)
 void	validate_args(int argc, char **argv)
 {
 	int		i;
+	int		args_len;
 	char	**args;	
 
-	i = 0;
+	i = 1;
+	args = argv;
+	args_len = argc;
 	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
 	{
-		i = 1;
-		args = argv;
+		i = 0;
+		args = ft_split(argv[1], ' ');
+		args_len = ft_arrlen(args);
 	}
-	if (has_duplicate(argc, args))
+	if (args[0] == NULL || has_duplicate(args_len, args))
 		print_error();
 	while (args[i])
 	{
