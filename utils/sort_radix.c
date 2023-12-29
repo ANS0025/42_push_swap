@@ -12,33 +12,38 @@
 
 #include "../push_swap.h"
 
-//TODO: Check if implementation is correct
+static int	get_max_bits(t_list *stack)
+{
+	int max_bits;
+	max_bits = 0;
+	while ((stack->size >> max_bits) != 0)
+		max_bits++;
+	return (max_bits);
+}
+
 void	radix_sort(t_list *stack_a, t_list *stack_b)
 {
+	int		max_bits;
 	int		i;
-	int		j;
-	int		bit;
-	int		bit_count;
-	t_node	*node;
+	int 	j;
+	int		size;
 
+	max_bits = get_max_bits(stack_a);
+	size = stack_a->size;
 	i = 0;
-	bit_count = 0;
-	while (i < stack_a->size)
+	while (i < max_bits)
 	{
 		j = 0;
-		while (j < stack_a->size)
+		while (j < size)
 		{
-			node = stack_a->head;
-			bit = (node->data >> bit_count) & 1;
-			if (bit == 0)
-				pb(stack_a, stack_b);
-			else
+			if ((stack_a->head->index >> i) & 1)
 				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
 			j++;
 		}
-		while (stack_b->size > 0)
+		while (stack_b->size != 0)
 			pa(stack_a, stack_b);
-		bit_count++;
 		i++;
 	}
 }
