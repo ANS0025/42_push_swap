@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:54:35 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/09 14:54:36 by akiseki          ###   ########.fr       */
+/*   Updated: 2023/12/29 23:43:48 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 typedef struct __node
 {
 	int				data;
-	int 			index;
+	int				index;
 	struct __node	*prev;
 	struct __node	*next;
 }	t_node;
@@ -27,23 +27,23 @@ typedef struct __node
 //stack
 typedef struct __list
 {
-	int 	size;
+	int		size;
 	t_node	*head;
 	t_node	*tail;
 }	t_list;
 
 //util functions
-t_node *initialize_node(int data);
-void initialize_stack(t_list *stack);
-void set_stack(t_list *stack, int argc, char **argv);
-void print_stack(t_list *stack);
-void print_error(void);
-void ft_free(char **array);
-void free_stack(t_list *stack);
-int	is_sorted(t_list *stack);
-int has_duplicate(int argc, char **argv);
-void validate_args(int argc, char **argv);
-void sort_stack(t_list *stack_a, t_list *stack_b);
+t_node	*initialize_node(int data);
+void	initialize_stack(t_list *stack);
+void	set_stack(t_list *stack, int argc, char **argv);
+void	print_stack(t_list *stack);
+void	print_error(void);
+void	ft_free(char **array);
+void	free_stack(t_list *stack);
+int		is_sorted(t_list *stack);
+int		has_duplicate(int argc, char **argv);
+void	validate_args(int argc, char **argv);
+void	sort_stack(t_list *stack_a, t_list *stack_b);
 
 //operations
 void	pa(t_list *stack_a, t_list *stack_b);
@@ -57,10 +57,10 @@ void	rr(t_list *stack_a, t_list *stack_b);
 void	sa(t_list *stack);
 void	sb(t_list *stack);
 void	ss(t_list *stack_a, t_list *stack_b);
+
 //sorting algorithms
 void	sort_three_elements(t_list *stack);
 void	sort_under_five_elements(t_list *stack_a, t_list *stack_b);
 void	radix_sort(t_list *stack_a, t_list *stack_b);
-
 
 #endif

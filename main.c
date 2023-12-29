@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 14:53:42 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/09 14:53:49 by akiseki          ###   ########.fr       */
+/*   Updated: 2023/12/29 23:43:16 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,37 +27,14 @@ int	main(int argc, char **argv)
 	initialize_stack(stack_a);
 	initialize_stack(stack_b);
 	set_stack(stack_a, argc, argv);
-
-	//checker
-	ft_printf("This is the stack before sorting:\n");
-	print_stack(stack_a);
-	ft_printf("%d\n\n", stack_a->size);
-	//end checker
-
 	if (is_sorted(stack_a))
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);
 		return (0);
 	}
-	//checker
-	ft_printf("Sorting the stack:\n"); 
-	//end checker
-
 	sort_stack(stack_a, stack_b);
-
-	//check
-	ft_printf("\nThis is the stack after sorting:\n");
-	print_stack(stack_a);
-	ft_printf("\n\n");
-	//end check
-
 	free_stack(stack_a);
 	free_stack(stack_b);
-
-	//check
-	print_stack(stack_a);
-	print_stack(stack_b);
-	//end check
 	return (0);
 }
