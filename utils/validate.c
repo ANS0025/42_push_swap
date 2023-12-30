@@ -95,7 +95,7 @@ void	validate_args(int argc, char **argv)
 	{
 		if (!isnum(args[i]))
 			print_error();
-		if (ft_atoi(args[i]) > INT_MAX || ft_atoi(args[i]) < INT_MIN)
+		if (custom_atoi(args[i]) > INT_MAX || custom_atoi(args[i]) < INT_MIN)
 			print_error();
 		i++;
 	}
