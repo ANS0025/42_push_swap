@@ -6,13 +6,12 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 00:09:27 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 01:34:37 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2023/12/30 16:35:28 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// スタックの中身を表示
 void	print_stack(t_list *stack)
 {
 	t_node	*node;
@@ -31,7 +30,6 @@ void	print_stack(t_list *stack)
 	}
 }
 
-// エラーを表示して終了
 void	print_error(void)
 {
 	ft_putendl_fd("Error", 2);

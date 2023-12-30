@@ -6,7 +6,7 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 00:09:50 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 03:15:43 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2023/12/30 16:35:08 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ static int	ft_arrlen(char **array)
 	return (i);
 }
 
-// 引数が重複していないかどうかを判定
 static int	has_duplicate(int argc, char **argv)
 {
 	int	i;
@@ -73,7 +72,6 @@ static int	has_duplicate(int argc, char **argv)
 	return (0);
 }
 
-// 引数が正しいかどうかを判定
 void	validate_args(int argc, char **argv)
 {
 	int		i;

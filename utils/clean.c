@@ -6,13 +6,13 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 00:11:10 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 00:11:24 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2023/12/30 16:30:55 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// 2次元配列を解放
+// free two-dimensional array
 void	ft_free(char **array)
 {
 	int	i;
@@ -26,7 +26,7 @@ void	ft_free(char **array)
 	free(array);
 }
 
-// stackの全てのノードを解放
+// free all nodes in stack
 void	free_stack(t_list *stack)
 {
 	t_node	*node;
