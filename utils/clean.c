@@ -23,6 +23,7 @@ void	ft_free(char **array)
 		free(array[i]);
 		i++;
 	}
+	free(array);
 }
 
 // stackの全てのノードを解放
