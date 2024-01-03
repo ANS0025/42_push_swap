@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 15:36:27 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:36:31 by akihitoniko      ###   ########.fr       */
+/*   Created: 2024/01/03 15:46:55 by akiseki           #+#    #+#             */
+/*   Updated: 2024/01/03 15:51:29 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ void		validate_args(int argc, char **argv);
 void		sort_stack(t_list *stack_a, t_list *stack_b);
 long long	custom_atoi(const char *str);
 char		**parse_args(int argc, char **argv);
+void		ft_dd(void);
+void		print_two_dimensional_array(char **array);
 
 //operations
 void		pa(t_list *stack_a, t_list *stack_b);

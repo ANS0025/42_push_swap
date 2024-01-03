@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/03 15:32:50 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:35:56 by akihitoniko      ###   ########.fr       */
+/*   Created: 2024/01/03 15:49:41 by akiseki           #+#    #+#             */
+/*   Updated: 2024/01/03 15:51:18 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,23 @@ void	print_stack(t_list *stack)
 void	print_error(void)
 {
 	ft_putendl_fd("Error", 2);
+	exit(1);
+}
+
+void	print_two_dimensional_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		ft_printf("%s ", array[i]);
+		i++;
+	}
+	ft_printf("\n");
+}
+void ft_dd(void)
+{
+	ft_printf("dd\n");
 	exit(1);
 }
