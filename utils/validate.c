@@ -6,7 +6,7 @@
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:49:57 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:51:23 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 15:55:26 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	isnum(char *num)
 	int	i;
 
 	i = 0;
-	if (num[0] == '-')
+	if (num[0] == '-' || num[0] == '+')
 	{
 		i++;
 		if (num[1] == '\0')
