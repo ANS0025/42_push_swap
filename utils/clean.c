@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/30 00:11:10 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 16:30:55 by akihitoniko      ###   ########.fr       */
+/*   Created: 2024/01/03 15:32:28 by akiseki           #+#    #+#             */
+/*   Updated: 2024/01/03 15:35:21 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_free(char **array)
 	int	i;
 
 	i = 0;
+	if (array == NULL)
+		return ;
 	while (array[i])
 	{
 		free(array[i]);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/30 00:09:50 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 16:35:08 by akihitoniko      ###   ########.fr       */
+/*   Created: 2024/01/03 15:32:59 by akiseki           #+#    #+#             */
+/*   Updated: 2024/01/03 15:36:08 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,16 @@ static int	ft_strcmp(const char *s1, const char *s2)
 	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
-static int	ft_arrlen(char **array)
-{
-	int	i;
-
-	i = 0;
-	while (array[i])
-		i++;
-	return (i);
-}
-
-static int	has_duplicate(int argc, char **argv)
+static int	has_duplicate(char **argv)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < argc)
+	while (argv[i])
 	{
 		j = i + 1;
-		while (j < argc)
+		while (argv[j])
 		{
 			if (ft_strcmp(argv[i], argv[j]) == 0)
 				return (1);
@@ -75,19 +65,11 @@ static int	has_duplicate(int argc, char **argv)
 void	validate_args(int argc, char **argv)
 {
 	int		i;
-	int		args_len;
-	char	**args;	
+	char	**args;
 
-	i = 1;
-	args = argv;
-	args_len = argc;
-	if (argc == 2)
-	{
-		i = 0;
-		args = ft_split(argv[1], ' ');
-		args_len = ft_arrlen(args);
-	}
-	if (args[0] == NULL || has_duplicate(args_len, args))
+	i = 0;
+	args = parse_args(argc, argv);
+	if (args[0] == NULL || has_duplicate(args))
 		print_error();
 	while (args[i])
 	{
@@ -97,6 +79,5 @@ void	validate_args(int argc, char **argv)
 			print_error();
 		i++;
 	}
-	if (argc == 2)
-		ft_free(args);
+	ft_free(args);
 }

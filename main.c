@@ -5,12 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 14:53:42 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 01:26:29 by akihitoniko      ###   ########.fr       */
+/*   Created: 2024/01/03 15:33:24 by akiseki           #+#    #+#             */
+/*   Updated: 2024/01/03 15:37:13 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// void end(void)__attribute__((destructor));
+
+// void end(void)
+// {
+//     system("leaks push_swap");
+// }
 
 int	main(int argc, char **argv)
 {

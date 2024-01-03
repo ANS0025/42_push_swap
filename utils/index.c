@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/09 15:10:31 by akiseki           #+#    #+#             */
-/*   Updated: 2023/12/30 16:36:43 by akihitoniko      ###   ########.fr       */
+/*   Created: 2024/01/03 15:35:46 by akiseki           #+#    #+#             */
+/*   Updated: 2024/01/03 15:35:49 by akihitoniko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,13 +76,7 @@ void	set_stack(t_list *stack, int argc, char **argv)
 	t_node	*node;
 
 	i = 0;
-	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
-	{
-		args = argv;
-		i++;
-	}
+	args = parse_args(argc, argv);
 	while (args[i])
 	{
 		node = initialize_node(ft_atoi(args[i]));
@@ -90,6 +84,5 @@ void	set_stack(t_list *stack, int argc, char **argv)
 		i++;
 	}
 	set_index(stack);
-	if (argc == 2)
-		ft_free(args);
+	ft_free(args);
 }
