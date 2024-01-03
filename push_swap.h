@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
+/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:46:55 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:51:29 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 16:22:23 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

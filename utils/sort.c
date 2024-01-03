@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
+/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:49:52 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:51:21 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 16:22:08 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

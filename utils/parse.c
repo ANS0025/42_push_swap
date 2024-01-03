@@ -6,7 +6,7 @@
 /*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:29:56 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:29:59 by akiseki          ###   ########.fr       */
+/*   Updated: 2024/01/03 16:44:53 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,14 @@ static int	ft_arrlen(char **array)
 	return (i);
 }
 
-static char	**merge_array(char **array, char **tmp)
+static char	**merge_array(char **array, char **tmp, int arr_len, int tmp_len)
 {
 	int		i;
 	int		j;
-	int		arr_len;
-	int		tmp_len;
 	char	**new_array;
 
 	i = 0;
 	j = 0;
-	arr_len = ft_arrlen(array);
-	tmp_len = ft_arrlen(tmp);
 	new_array = (char **)malloc(sizeof(char *) * (arr_len + tmp_len + 1));
 	if (!new_array)
 		print_error();
@@ -65,7 +61,7 @@ char	**parse_args(int argc, char **argv)
 	while (i < argc)
 	{
 		tmp = ft_split(argv[i], ' ');
-		args = merge_array(args, tmp);
+		args = merge_array(args, tmp, ft_arrlen(args), ft_arrlen(tmp));
 		ft_free(tmp);
 		i++;
 	}

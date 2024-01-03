@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
+/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:49:57 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:55:26 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 16:22:14 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

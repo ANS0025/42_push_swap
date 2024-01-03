@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
+/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:49:41 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:51:18 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 16:46:12 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ void	print_two_dimensional_array(char **array)
 	}
 	ft_printf("\n");
 }
-void ft_dd(void)
+
+void	ft_dd(void)
 {
 	ft_printf("dd\n");
 	exit(1);

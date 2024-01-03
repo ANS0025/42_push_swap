@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
+/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:49:30 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:51:12 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 16:21:56 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
+/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:48:44 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:50:33 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 16:21:10 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

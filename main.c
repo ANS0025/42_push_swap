@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
+/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:50:16 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:51:26 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 16:22:42 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// Check for memory leaks
 // void end(void)__attribute__((destructor));
 
 // void end(void)

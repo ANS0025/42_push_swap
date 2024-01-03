@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akihitonikoseki <akihitonikoseki@studen    +#+  +:+       +#+        */
+/*   By: akiseki <akiseki@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 15:49:05 by akiseki           #+#    #+#             */
-/*   Updated: 2024/01/03 15:50:42 by akihitoniko      ###   ########.fr       */
+/*   Updated: 2024/01/03 16:21:39 by akiseki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
