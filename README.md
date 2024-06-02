@@ -32,8 +32,7 @@ push_swapは、2つのスタックを使用して与えられた整数を効率�
 プログラムは、与えられた数字の並びを昇順にソートするために必要な最小限の操作を標準出力に表示します。
 
 ## テスト方法
-- https://github.com/nafuka11/push_swap_tester
-
+https://github.com/nafuka11/push_swap_tester  
 これらのテスターを使用する場合は、それぞれのREADMEファイルに従ってセットアップとテストを行ってください。
 
 ## コマンド一覧
