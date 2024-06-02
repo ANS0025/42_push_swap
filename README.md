@@ -22,7 +22,7 @@ push_swapは、2つのスタックを使用して与えられた整数を効率�
 6. テスト&リファクタリング
 
 ## コンパイル方法
-1. リポジトリをクローン： ```git clone https://github.com/your_username/42_push_swap.git```
+1. リポジトリをクローン： ```git clone git@github.com:ANS0025/42_push_swap.git```
 2. プロジェクトディレクトリに移動: ```cd 42_push_swap```
 3. コンパイル: ```make```
 
